@@ -61,7 +61,11 @@ class Settings
             return $url;
         }
         $www = $this->_config->getSetting('www');
-        return $www['url'];
+        $baseURL = $www['url'];
+        if (array_key_exists('HTTPS', $_SERVER) && $_SERVER['HTTPS'] == "on") {
+            $baseURL = str_replace("http", "https", $baseURL);
+        }
+        return $baseURL;
     }
 
     /**

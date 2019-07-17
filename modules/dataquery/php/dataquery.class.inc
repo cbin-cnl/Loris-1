@@ -139,6 +139,7 @@ class Dataquery extends \NDB_Form
             },
             $sessions
         ));
+	sort($visits);
 
         $this->tpl_data['visits'] = array_combine($visits, $visits); //array("BAS1"=>"BAS1");//\Utility::getExistingVisitLabels();
 
