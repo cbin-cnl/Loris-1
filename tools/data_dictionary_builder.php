@@ -240,9 +240,6 @@ foreach ($instruments AS $instrument) {
     if (empty($table)) {
         continue;
     }
-    print "Inserting validity for $table\n";
-    // Insert validity
-    $Name = $table . "_Validity";
 
     $_type_enum = 'enum(\'Questionable\', \'Invalid\', \'Valid\')';
     $_CurrentGUITable_value = 'quat_table_' . ceil(($parameterCount  - 0.5) / 150);
@@ -263,26 +260,6 @@ foreach ($instruments AS $instrument) {
     } else {
         $ParameterTypeID = '';
     }
-    $error =$DB->insert(
-        "parameter_type",
-        $query_params
-    );
-    if ($ParameterTypeID === '') {
-        $paramId = $DB->lastInsertID;
-    } else {
-        $paramId = $ParameterTypeID;
-    }
-    $error = $DB->insert(
-        "parameter_type_category_rel",
-        array(
-         "ParameterTypeID"         => $paramId,
-         "ParameterTypeCategoryID" => $catId,
-        )
-    );
-    // Insert administration
-    print "Inserting administration for $table\n";
-    $Name = $table . "_Administration";
-
     $_type_enum = 'enum(\'None\', \'Partial\', \'All\')';
     $_CurrentGUITable_value = 'quat_table_' . ceil(($parameterCount  - 0.5) / 150);
     $query_params           = array(
@@ -301,23 +278,6 @@ foreach ($instruments AS $instrument) {
     } else {
         $ParameterTypeID = '';
     }
-
-    $error = $DB->insert(
-        "parameter_type",
-        $query_params
-    );
-    if ($ParameterTypeID === '') {
-        $paramId = $DB->lastInsertID;
-    } else {
-        $paramId = $ParameterTypeID;
-    }
-    $error =$DB->insert(
-        "parameter_type_category_rel",
-        array(
-         "ParameterTypeID"         => $paramId,
-         "ParameterTypeCategoryID" => $catId,
-        )
-    );
     // Insert examiner
 }
 

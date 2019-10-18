@@ -54,7 +54,7 @@ var arrayIntersect = function(arrays) {
 
     for(var k in obj) {
         if(obj[k] === arrays.length){
-            results.push(k);
+		results.push(k.split(','));
         }
     }
 

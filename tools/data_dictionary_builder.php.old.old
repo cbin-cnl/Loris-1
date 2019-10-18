@@ -240,6 +240,9 @@ foreach ($instruments AS $instrument) {
     if (empty($table)) {
         continue;
     }
+    print "Inserting validity for $table\n";
+    // Insert validity
+    $Name = $table . "_Validity";
 
     $_type_enum = 'enum(\'Questionable\', \'Invalid\', \'Valid\')';
     $_CurrentGUITable_value = 'quat_table_' . ceil(($parameterCount  - 0.5) / 150);
@@ -276,6 +279,9 @@ foreach ($instruments AS $instrument) {
          "ParameterTypeCategoryID" => $catId,
         )
     );
+    // Insert administration
+    print "Inserting administration for $table\n";
+    $Name = $table . "_Administration";
 
     $_type_enum = 'enum(\'None\', \'Partial\', \'All\')';
     $_CurrentGUITable_value = 'quat_table_' . ceil(($parameterCount  - 0.5) / 150);

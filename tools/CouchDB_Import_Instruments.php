@@ -34,6 +34,10 @@ class CouchDBInstrumentImporter
                                              'Description' => 'Days since  ' .
                                                'first enrollment',
                                             ),
+			'study_num' => array(
+					'Type' => "numeric", 
+					'Description' => 'study number',
+					),
                       );
             $Fields = $this->SQLDB->pselect(
                 "SELECT * from parameter_type WHERE SourceFrom=:inst " .
