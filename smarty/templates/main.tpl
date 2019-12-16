@@ -487,7 +487,7 @@
         {if $FormAction}
         </form>
         {/if}
-
+	<!---
         <a id="login-modal-button" href="#" data-toggle="modal" data-target="#login-modal" style="display: none;">Login</a>
 
         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
@@ -517,5 +517,6 @@
                 </div>
             </div>
         </div>
+	--->
     </body>
 </html>

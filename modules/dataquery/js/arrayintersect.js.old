@@ -27,19 +27,6 @@ var arrayEquals = function(array1, array2) {
     return true;
 }
 
-function remove_duplicates(arr) {
-    // Function from: https://stackoverflow.com/questions/9229645/remove-duplicate-values-from-js-array
-    var obj = {};
-    var ret_arr = [];
-    for (var i = 0; i < arr.length; i++) {
-        obj[arr[i]] = true;
-    }
-    for (var key in obj) {
-        ret_arr.push(key);
-    }
-    return ret_arr;
-}
-
 var arrayIntersect = function(arrays) {
     // Base cases: the intersection of nothing is empty,
     //             the intersection of a single array is itself.
@@ -52,9 +39,6 @@ var arrayIntersect = function(arrays) {
 
     var obj = {},
         results = [];
-    for(var i=0; i<arrays.length; i++){
-        arrays[i] = remove_duplicates(arrays[i]);
-    }
 
     for(var i = 0; i < arrays.length; i++){
         for(var j = 0; j < arrays[i].length; j++){
