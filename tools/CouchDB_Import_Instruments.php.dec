@@ -38,6 +38,11 @@ class CouchDBInstrumentImporter
 		       			'Type'    => "text",
 					'Description' => 'All studies subject is enrolled in'
 					),
+		       'study_name'	=> array(
+		       			'Type' => "text",
+					'Description' => 'Study this assessment belongs to'
+					),
+
                       );
             $Fields = $this->SQLDB->pselect(
                 "SELECT * from parameter_type WHERE SourceFrom=:inst " .

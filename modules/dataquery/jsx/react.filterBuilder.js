@@ -323,6 +323,12 @@ var FilterRule = React.createClass({
 		}
 		return (
 			<div className="panel panel-default">
+				<datalist id="data">
+   					<option value="Longitudinal_Child" />
+    					<option value="Longitudinal_Adult" />
+    					<option value="Discovery" />
+    					<option value="Neurofeedback" />
+				</datalist>
 				<div className="panel-body">
 					{rule}
 					<div className="col-xs-2">
